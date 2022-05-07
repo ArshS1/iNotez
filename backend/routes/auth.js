@@ -25,16 +25,18 @@ router.post(
     body("password", "Password must have 7 letters").isLength({ min: 7 }),
   ],
   async (req, res) => {
-    let success = false; 
+    let success = false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({success, errors: errors.array() }); // return errors in case of bad request
+      return res.status(400).json({ success, errors: errors.array() }); // return errors in case of bad request
     }
     // try to create a user first then throw error if present
     try {
       let User = await user.findOne({ email: req.body.email });
       if (User) {
-        return res.status(400).json({ success, error: "Email already in Use." }); // return errors in case of bad request
+        return res
+          .status(400)
+          .json({ success, error: "Email already in Use." }); // return errors in case of bad request
       }
 
       // use bcrypt to generate a secure password
@@ -54,10 +56,11 @@ router.post(
         },
       };
       const authData = jwt.sign(info, jwtBody);
-      success = true; 
+      success = true;
 
-      res.json({success, authData});
+      res.json({ success, authData });
     } catch (error) {
+      console.log(error)
       res.status(500).send("Internal server error");
     }
   }
@@ -83,17 +86,17 @@ router.post(
     const { email, password } = req.body;
 
     try {
-      let success = false; 
+      let success = false;
       let User = await user.findOne({ email });
       if (!User) {
-        success = false; 
+        success = false;
         return res
           .status(400)
           .json(success, { error: "Check credentials and try again." });
       }
       const check = await bcrypt.compare(password, User.password);
       if (!check) {
-        success = false; 
+        success = false;
         return res
           .status(400)
           .json(success, { error: "Check credentials and try again." });
@@ -105,8 +108,8 @@ router.post(
         },
       };
       const authData = jwt.sign(info, jwtBody);
-      success = true; 
-      res.json({success, authData});
+      success = true;
+      res.json({ success, authData });
     } catch (error) {
       console.log(error.message);
       res.status(500).send("Internal server error");
@@ -120,8 +123,8 @@ router.post("/getuser", fetchUser, async (req, res) => {
   try {
     idUser = {
       User: {
-        id: req.user.id
-      }
+        id: req.user.id,
+      },
     };
     const User = await user.findOne(idUser).select("-password");
     res.send(User);
