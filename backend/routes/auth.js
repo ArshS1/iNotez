@@ -10,6 +10,8 @@ const jwtBody = "dontShareThis";
 
 const { body, validationResult } = require("express-validator");
 
+// all endpoints for auth start with /api/auth/...
+
 // the [] is for validation purposes for Login details
 // /api/auth/createuser -- end point
 router.post(
