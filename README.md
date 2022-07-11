@@ -1,3 +1,5 @@
+This project uses the MERN stack and also uses Boostrap for some of the styling components. This app allows users to make a new account in which they could make notes and access them on their desktop and mobile device.  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
