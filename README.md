@@ -1,3 +1,17 @@
+This project uses the MERN stack and also uses Boostrap for some of the styling components. This app allows users to make a new account in which they could make notes and access them on their desktop and mobile device.  
+
+Below is an image of the main page:
+![Screen Shot 2022-07-21 at 9 37 58 PM](https://user-images.githubusercontent.com/90710790/180342963-840e8bad-3f96-4812-af9a-d3b2f2270f89.png)
+
+
+## Tech Stack
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)&nbsp;
+![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)&nbsp;
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)&nbsp;
+![Node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)&nbsp;
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)&nbsp;
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
