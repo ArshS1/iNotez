@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { Toaster, toast } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 toast("Only Front-End Avaliable for Site", {
   icon: "🥺",
   style: {
@@ -15,7 +14,6 @@ toast("Only Front-End Avaliable for Site", {
     color: "#fff",
   },
 });
-
 root.render(
   <React.StrictMode>
     <Toaster position="bottom-center" reverseOrder={true} toastOptions />
