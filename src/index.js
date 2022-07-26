@@ -19,7 +19,6 @@ toast("Only Front-End Avaliable for Site", {
 root.render(
   <React.StrictMode>
     <Toaster position="bottom-center" reverseOrder={true} toastOptions />
-
     <App />
   </React.StrictMode>
 );
